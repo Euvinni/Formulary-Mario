@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /*alinha em relação ao eixo X **/
+    justify-content: center; /*alinha em relação ao eixo Y **/
+    padding: 30;
+    background-color: black;
+}
+
+.container {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 5px 20px orange; 
+}
+
+.container .cover {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 98; /*Manipulador de camadas*/
+    transition: all 1s ease; 
+    transform-origin: left;
+}
+
+
+
+.container .cover img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container #flip:checked ~ .cover {
+    transform: rotateY(-180deg);
+}
+
+.container .cover .text {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container .forms .form-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*Espaçamento entre eles*/
+}
+
+.form-content .login-form , 
+.form-content .signup-form {
+    width: calc(100% /2 - 25px);
+}
+
+.forms .form-content .title {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: lightblue;
+
+}
+
+.forms .form-content .title::before {
+
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background-color: aqua;
+}
+
+.forms .form-content .input-boxes {
+    margin-top: 1rem;
+}
+
+.forms .form-content .input-box {
+
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 50px 0;
+}
+
+.forms .input-box input {
+
+    height: 100%;
+    width: 100%;
+    outline: none; /*Bordas da digitação*/
+    border: none; /*Bordas dos input*/
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.forms .form-content .text a {
+    text-decoration: none;
+    color: red;
+}
+
+.forms .form-content .text a:hover {
+    text-decoration: underline;
+}
+
+.forms .form-content .button {
+    color: white;
+    margin-top: 3rem;
+}
+
+.forms .form-content .button input {
+    color: white;
+    background-color: lightblue;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+}
+
+.forms .form-content .button input:hover {
+    background-color: red;
+
+}
+
+.forms .form-content label {
+    color: blue;
+    cursor: pointer;
+}
+
+.forms .form-content label:hover {
+    text-decoration: underline;
+}
+
+.container #flip {
+    display: none;
+}
+
+.input-boxes .sign-up-text {
+    color: red;
+}
+
+#muda-cor {
+    color: orange;
+}
+
+.container .cover .front, 
+.container .cover .back{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
